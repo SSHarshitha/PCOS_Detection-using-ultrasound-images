@@ -1,0 +1,123 @@
+<html>
+
+<head>
+  <title>Upload Image</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styleResult.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='css/bulb.png') }}">
+</head>
+
+
+<body style="background-color: #302b63;">
+
+  <nav class="navbar">
+    <a href="{{url_for('Home')}}"> <i class="fas fa-home"></i> <span>home</span> </a>
+    <a href="{{url_for('about')}}"> <i class="fas fa-user"></i> <span>about</span> </a>
+    <a href="{{url_for('Login')}}"> <i class="fas fa-address-book"></i> <span>signup/login</span> </a>
+</nav>
+
+  <h1 style="color: #fff;" align="center">Upload Your Image</h1>
+  <br>
+  <br><br><br>  
+  <form id="image-form" action="{{ url_for('result') }}" method="POST" enctype="multipart/form-data">
+<label for="images" class="drop-container">
+  <span class="drop-title">Drop files here</span>
+  or
+  <input type="file" id="images" accept="image/*" name="in_img" required>
+</label>
+ <div style="margin-left: 43%; margin-top: 1%;"><input class="button_" type="submit">  <input class="button_" type="reset"></div>
+</form>
+<style>
+
+
+  body {
+  margin: 20px 60px;
+  /*background-image: url("{{url_for('static', filename='styles/leaf.jpg')}}");
+  background-image: url("leaf.jpg");*/
+}
+
+.drop-container {
+  position: relative;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 700px;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px dashed #555;
+  background: #e7e7e74b;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background .2s ease-in-out, border .2s ease-in-out;
+  margin: auto;
+}
+
+.drop-container:hover {
+  background: #eee;
+  border-color: #111;
+}
+
+.drop-container:hover .drop-title {
+  color: #222;
+}
+
+.drop-title {
+  color: #444;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  transition: color .2s ease-in-out;
+}
+
+input[type=file] {
+  width: 350px;
+  max-width: 100%;
+  color: #444;
+  padding: 5px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #555;
+}
+
+input[type=file]::file-selector-button {
+  margin-right: 20px;
+  border: none;
+  background: crimson;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  transition: background .2s ease-in-out;
+}
+
+
+
+input[type=file]::file-selector-button:hover {
+  background: #302b63;
+}
+
+.button_{
+  margin-right: 20px;
+  border:1;
+  border-width: 4px;
+  border-color: #302b63;
+  background: crimson;
+  padding: 5px 15px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  width: 10%;
+  height: 5%;
+  transition-duration: 0.4s;
+}
+
+.button_:hover{
+  color: #084cdf; 
+  background-color: white;
+}
+</style>
+</body>
+
+</html>

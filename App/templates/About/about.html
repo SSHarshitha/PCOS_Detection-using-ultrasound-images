@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='css/bulb.png') }}">
+    
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleHome.css') }}">
+
+    <style>
+        .model_perf_img{
+            height: 300px;
+        }
+    
+        table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+        }
+    
+        table, th, td {
+          border: 0px;
+        }
+    
+        th, td {
+          padding: 8px;
+          text-align: center;
+        }
+    
+        img {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin: 0 auto;
+        }
+    
+        @media (max-width: 600px) {
+          table {
+            display: block;
+          }
+    
+          th, td {
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+          }
+        }
+      </style>
+
+</head>
+<body>
+    
+<!-- navbar section starts  -->
+
+<nav class="navbar">
+    <a href="{{url_for('Home')}}"> <i class="fas fa-home"></i> <span>home</span> </a>
+    <a href="{{url_for('about')}}"> <i class="fas fa-user"></i> <span>about</span> </a>
+    <a href="{{url_for('Login')}}"> <i class="fas fa-address-book"></i> <span>signup/login</span> </a>
+</nav>
+
+<!-- navbar section ends -->
+
+<!-- about section starts  -->
+
+<section class="about">
+
+    <h1 class="heading"> about <span>project</span> </h1>
+
+    <div class="row">
+
+        <div class="info-container">
+
+            <h1>project info</h1>
+
+                <p>Elevate PCOS diagnosis through cutting-edge technology with our project employing SVM for precise detection in ultrasound images. Harnessing advanced algorithms, we aim to empower healthcare professionals with efficient tools for early and accurate identification of Polycystic Ovary Syndrome. Revolutionize women's health with our solution, paving the way for proactive and personalized medical interventions. Experience the future of PCOS detection through our innovative approach at the intersection of technology and healthcare. Join us in shaping a new era in women's wellness.</p>
+
+        </div>
+
+       
+
+    </div>
+
+    <h1 class="heading"> Model <span>Performance</span> </h1>
+
+    <table>
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="info-container">
+                        <h1>Confusion Matrix</h1>
+                        <img class="model_perf_img" src="{{ url_for('static', filename='css/mp/Confusion_matrix_svm.png') }}" alt="">
+                    </div>
+            </td>
+
+           <!-- <td>
+                <div class="row">
+                    <div class="info-container">
+                        <h1>Confusion Matrix</h1>
+                        <img class = "model_perf_img" src="{{ url_for('static', filename='css/mp/confusion_matrix.png') }}" alt="">
+                    </div>
+            </td>
+        -->
+        </tr>
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="info-container">
+                        <h1>ROC Curve</h1>
+                        <img class = "model_perf_img" src="{{ url_for('static', filename='css/mp/roc_curve.png') }}" alt="">
+                    </div>
+            </td>
+        <!--
+            <td>
+                <div class="row">
+                    <div class="info-container">
+                        <h1>Precision-Recall Curve</h1>
+                        <img class = "model_perf_img" src="{{ url_for('static', filename='css/mp/PR_curve.png') }}" alt="">
+                    </div>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="info-container">
+                        <h1>Performance over 290 Epochs</h1>
+                        <img class = "model_perf_img" src="{{ url_for('static', filename='css/mp/results.png') }}" alt="" style="height: 600px;">
+                    </div>
+            </td>
+
+        </tr>-->
+    </table>
+    <!--
+    <h1 class="heading"> Test <span>Results</span> </h1>
+    <table>
+        <tr>
+            <td>
+                <div class="row">
+                    <div class="info-container">
+                        <h1>Batch 0 Validation Results</h1>
+                        <img class = "model_perf_img" src="{{ url_for('static', filename='css/mp/val_batch0_pred.jpg') }}" alt="">
+                    </div>
+            </td>
+
+            <td>
+                <div class="row">
+                    <div class="info-container">
+                        <h1>Batch 1 Validation Results</h1>
+                        <img class = "model_perf_img" src="{{ url_for('static', filename='css/mp/val_batch1_pred.jpg') }}" alt="">
+                    </div>
+            </td>
+        </tr>
+    </table>
+-->
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- skills section starts  -->
+
+<section class="skills">
+
+    <h1 class="heading"> <span>Technologies</span> used </h1>
+
+    <div class="box-container">
+        <div class="box">
+            <h3>Support Vector Machine</h3>
+        </div>
+        <div class="box">
+            <h3>Open CV2</h3>
+        </div>
+        <div class="box">
+            <h3>Python</h3>
+    </div>
+
+</section>
+
+<!-- skills section ends -->
+
+<!-- education section starts  -->
+
+<section class="education">
+
+    <h1 class="heading"> <span>our</span> team </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>PHP,MYSQL</span>
+            <h3>MOHANRAJ</h3>
+            <p>21MIS0029</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>HTML,CSS,JS</span>
+            <h3>HARSHITHA</h3>
+            <p>21MIS0002</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span>PYTHON,CONNECTIVITY,IMPLEMENTATION</span>
+            <h3>HARSHITHA</h3>
+            <p>21MIS0002</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <span> Development</span>
+            <h3>TRISHA</h3>
+            <p>21MIS0167</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- education section ends -->
+
+</body>
+</html>

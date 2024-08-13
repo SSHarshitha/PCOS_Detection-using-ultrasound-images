@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Webcam Image Capture</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <style>
+        #video {
+            border: 1px solid black;
+            width: 640px;
+            height: 480px;
+        }
+        #image {
+            border: 1px solid black;
+            width: 640px;
+            height: 480px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Webcam Image Capture</h1>
+    <video id="video" autoplay></video>
+    <canvas id="canvas" style="display: none;"></canvas>
+    <br>
+    <img id="image" src="">
+    <script>
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const image = document.getElementById('image');
+        const context = canvas.getContext('2d');
+        const captureInterval = 15000;  // 15 seconds
+        let captureTimeout = null;
+
+        function startCapture() {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(stream => {
+                    video.srcObject = stream;
+                    video.onloadedmetadata = () => {
+                        video.play();
+                        captureImage();
+                        captureTimeout = setInterval(captureImage, captureInterval);
+                    };
+                })
+                .catch(error => {
+                    console.error('Error accessing webcam:', error);
+                });
+        }
+
+        function captureImage() {
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            const dataURL = canvas.toDataURL('image/jpeg');
+            image.src = dataURL;
+            sendData(dataURL);
+        }
+
+        function sendData(dataURL) {
+            $.ajax({
+                url: '/upload',
+                type: 'POST',
+                data: { image: dataURL },
+                success: function(response) {
+                    console.log('Image uploaded successfully:', response);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error uploading image:', error);
+                }
+            });
+        }
+
+        startCapture();
+    </script>
+</body>
+</html>

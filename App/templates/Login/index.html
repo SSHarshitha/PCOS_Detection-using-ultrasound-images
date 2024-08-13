@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Sign up / Login</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styleLogin.css') }}">
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='css/bulb.png') }}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Slide Navbar</title>
+	<link rel="stylesheet" type="text/css" href="slide navbar style.css">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1 id="Page_title">PCOS Detection Using Ultrasound Images </h1>
+	<style>
+		#Page_title{
+			position: absolute;
+			top:0;
+			left: 0;
+			color: cornsilk;
+			margin-left: 27%;
+			text-transform: uppercase;
+		}
+	</style>
+	<br>
+	<div class="main">  	
+		<input type="checkbox" id="chk" aria-hidden="true">
+
+			<div class="signup">
+				<form>
+					<label for="chk" aria-hidden="true">Sign up</label>
+					<input type="text" name="txt" placeholder="User name" required="">
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Sign up</button>
+				</form>
+			</div>
+
+			<div class="login">
+				<form action="{{url_for('Home')}}" method="POST">
+					<label for="chk" aria-hidden="true">Login</label>
+					<input type="email" name="email" placeholder="Email" required="">
+					<input type="password" name="pswd" placeholder="Password" required="">
+					<button>Login</button>
+				</form>
+			</div>
+	</div>
+</body>
+</html>
+<!-- partial -->
+  
+</body>
+</html>

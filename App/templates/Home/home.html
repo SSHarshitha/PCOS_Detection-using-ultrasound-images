@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='css/bulb.png') }}">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleHome.css') }}">
+
+</head>
+<body>
+    
+<!-- navbar section starts  -->
+
+<nav class="navbar">
+    <a href="{{url_for('Home')}}"> <i class="fas fa-home"></i> <span>home</span> </a>
+    <a href="{{url_for('about')}}"> <i class="fas fa-user"></i> <span>about</span> </a>
+    <a href="{{url_for('Login')}}"> <i class="fas fa-address-book"></i> <span>signup/login</span> </a>
+</nav>
+
+<!-- navbar section ends -->
+
+<!-- home section starts  -->
+
+<section class="home">
+
+    <div class="image">
+        <img src="{{ url_for('static', filename='css/mp/logo.jpg') }}" alt="">
+    </div>
+
+    <div class="content">
+        <h3>PCOS Detection From Ultrasound Images</h3>
+        <span>Using SVM (Support Vector Machine)</span>
+        <p>Revolutionize PCOS diagnosis with our innovative project utilizing SVM to detect and analyze patterns in ultrasound images, enabling early and accurate identification for proactive healthcare management.</p>
+        <a href="{{url_for('upload_image')}}" class="btn"> Try now (Image detection)<i class="fas fa-user"></i> </a><br>
+    </div>
+
+</section>
+
+<!-- home section ends -->
+
+</body>
+</html>
