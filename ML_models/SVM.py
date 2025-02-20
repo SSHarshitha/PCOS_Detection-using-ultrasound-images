@@ -9,7 +9,7 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 
 # Define the directory where your dataset is located
-dataset_dir = "C:/Users/Nithya Sri/Downloads/PCOS Detect/Model_2/Automatic_PCOS_Detection_Using_Ultrasound_images/processed_images"
+dataset_dir = "Automatic_PCOS_Detection_Using_Ultrasound_images/processed_images"
 
 # Initialize lists to store image data and corresponding labels
 X = []  # Image data
